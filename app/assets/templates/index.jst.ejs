@@ -1,0 +1,10 @@
+<ul>
+<% posts.each( function (post) { %>
+  <li>
+    <a href="#/posts/<%= post.id %>"><%= post.get('title') %></a><br>
+    <button class="delete" data-id="<%= post.id %>">Delete</button>
+    <br>
+  </li>
+<% }); %>
+</ul>
+
