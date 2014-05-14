@@ -7,12 +7,12 @@ window.Journal.Routers.PostRouter = Backbone.Router.extend({
   },
 
   postsIndex: function() {
-    var indexView = new Journal.Views.PostsIndex({
+    var sidebarView = new Journal.Views.PostsIndex({
       collection: Journal.Collections.posts
     });
 
-    Journal.Collections.posts.fetch();
-    this._swapView(indexView);
+    // this.sidebar = sidebarView;
+    $('#sidebar').html(sidebarView.render().$el);
   },
 
   postShow: function(id) {
@@ -48,6 +48,6 @@ window.Journal.Routers.PostRouter = Backbone.Router.extend({
       this.currentView.remove();
     }
     this.currentView = view;
-    $('#post-index').html(view.render().$el);
+    $('#content').html(view.render().$el);
   }
 });

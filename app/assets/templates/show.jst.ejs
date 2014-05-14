@@ -1,6 +1,6 @@
 
-<%= post.get("title") %><br>
-<%= post.get("body") %><br>
+<div data-id="title <%= post.id %>" ><%= post.get("title") %><br></div>
+<div data-id="body <%= post.id %>" ><%= post.get("body") %><br></div>
 
 <a href="#/posts/<%= post.id %>/edit" >Edit Post</a>
 <a href="#/">Back to Index</a>
